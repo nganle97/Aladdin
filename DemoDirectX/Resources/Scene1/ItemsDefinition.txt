@@ -1,0 +1,11 @@
+Character				Mean
+a						Apple
+1						OneUP
+s						Store
+m						MagicLamp
+g						GenieBonusLevel
+e						ExtraHealth
+r						RestartPoint
+i						Information
+A						AbuBonusLevel
+S						SpendThese

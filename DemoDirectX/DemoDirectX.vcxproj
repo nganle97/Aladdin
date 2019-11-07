@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E31674C3-C5A7-4CC8-8478-439A7BBAE3D1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DemoDirectX</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>Aladdin</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>zlib\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>zlib\lib;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)lib\x86;\zlib128-dll\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>StdCall</CallingConvention>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3dx9.lib;d3d9.lib;dxguid.lib;dinput8.lib;winmm.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>StdCall</CallingConvention>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3dx9.lib;d3d9.lib;dxguid.lib;dinput8.lib;zlib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FrameWork\GameComponents\Animation.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\Camera.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\Game.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\GameCollision.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\GameDebugDraw.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\GameGlobal.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\GameMap.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\GameTime.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\QuadTree.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\Scene.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\Sound.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\Sprite.cpp" />
+    <ClCompile Include="FrameWork\GameComponents\Text.cpp" />
+    <ClCompile Include="FrameWork\GameControllers\SceneManager.cpp" />
+    <ClCompile Include="FrameWork\GameControllers\SpriteManager.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy1st\CivilianEnemy1st.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy1st\CivilianEnemy1stData.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy1st\CivilianEnemy1stState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy1st\CivilianEnemy1stThrowState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy2nd\CivilianEnemy2nd.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy2nd\CivilianEnemy2ndData.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy2nd\CivilianEnemy2ndState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy2nd\CivilianEnemy2ndThrowState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4th.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thBeatState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thData.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thRunState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thStandState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Enemy.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1BeatenState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1BeatState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1Data.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1RunState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1StandState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1State.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2ArouseState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2BeatenState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2BurnedState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2CutState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2DartState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2Data.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2RunState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2State.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3BeatenState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3DanceState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3Data.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3RunState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3StandState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3State.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3ThrowState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Entity.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Jafar\Jafar.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Jafar\JafarData.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Jafar\JafarOriginalState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Jafar\JafarSnakeState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Jafar\JafarState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\MapObject\Camel.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\MapObject\Pelder.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\MapObject\SpringBoard.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\PlayerInfo.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Items.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\MapObject\FloatingGround.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\MapObject\GameObject.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\Player.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerClimbingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerClimbJumpingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerCuttingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerData.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerDownCuttingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerDownState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerDownThrowingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerDyingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerFallingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerFlippingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerHangCuttingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerHangingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerHangThrowingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerHitState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerJumpCuttingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerJumpingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerJumpThrowingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerLandingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerMoveJumpingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerPushingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerReviveState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerRunCuttingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerRunningState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerStandingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerStoppingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerSwingingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerThrowingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerUpCuttingState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Player\PlayerUpState.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Weapon\Apple.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Weapon\CivilianEnemy1Weapon.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Weapon\Fire.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Weapon\Guard3Weapon.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Weapon\JafarWeapon1.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Weapon\JafarWeapon2.cpp" />
+    <ClCompile Include="FrameWork\GameObjects\Weapon\Weapon.cpp" />
+    <ClCompile Include="FrameWork\MapReader\base64.cpp" />
+    <ClCompile Include="FrameWork\MapReader\miniz.c" />
+    <ClCompile Include="FrameWork\MapReader\tinyxml2.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxEllipse.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxImage.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxImageLayer.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxLayer.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxMap.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxObject.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxObjectGroup.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxPolygon.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxPolyline.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxPropertySet.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxTerrain.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxTerrainArray.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxTile.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxTileLayer.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxTileOffset.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxTileset.cpp" />
+    <ClCompile Include="FrameWork\MapReader\TmxUtil.cpp" />
+    <ClCompile Include="FrameWork\Scenes\BeginScene.cpp" />
+    <ClCompile Include="FrameWork\Scenes\BossScene.cpp" />
+    <ClCompile Include="FrameWork\Scenes\DemoScene.cpp" />
+    <ClCompile Include="FrameWork\Scenes\EndScene.cpp" />
+    <ClCompile Include="FrameWork\Scenes\Intro.cpp" />
+    <ClCompile Include="FrameWork\Scenes\Scene1.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FrameWork\GameComponents\Animation.h" />
+    <ClInclude Include="FrameWork\GameComponents\Camera.h" />
+    <ClInclude Include="FrameWork\GameComponents\Game.h" />
+    <ClInclude Include="FrameWork\GameComponents\GameCollision.h" />
+    <ClInclude Include="FrameWork\GameComponents\GameDebugDraw.h" />
+    <ClInclude Include="FrameWork\GameComponents\GameGlobal.h" />
+    <ClInclude Include="FrameWork\GameComponents\GameMap.h" />
+    <ClInclude Include="FrameWork\GameComponents\GameTime.h" />
+    <ClInclude Include="FrameWork\GameComponents\QuadTree.h" />
+    <ClInclude Include="FrameWork\GameComponents\Scene.h" />
+    <ClInclude Include="FrameWork\GameComponents\Sound.h" />
+    <ClInclude Include="FrameWork\GameComponents\Sprite.h" />
+    <ClInclude Include="FrameWork\GameComponents\Text.h" />
+    <ClInclude Include="FrameWork\GameControllers\SceneManager.h" />
+    <ClInclude Include="FrameWork\GameControllers\SpriteManager.h" />
+    <ClInclude Include="FrameWork\GameDefines\define.h" />
+    <ClInclude Include="FrameWork\GameDefines\FrameData.h" />
+    <ClInclude Include="FrameWork\GameDefines\STLMAP.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy1st\CivilianEnemy1st.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy1st\CivilianEnemy1stData.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy1st\CivilianEnemy1stState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy1st\CivilianEnemy1stThrowState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy2nd\CivilianEnemy2nd.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy2nd\CivilianEnemy2ndData.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy2nd\CivilianEnemy2ndState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy2nd\CivilianEnemy2ndThrowState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4th.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thBeatState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thData.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thRunState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thStandState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\CivilianEnemy4th\CivilianEnemy4thState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Enemy.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1BeatenState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1BeatState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1Data.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1RunState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1StandState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_1st\Guard1State.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2ArouseState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2BeatenState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2BurnedState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2CutState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2DartState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2Data.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2RunState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_2nd\Guard2State.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3BeatenState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3DanceState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3Data.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3RunState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3StandState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3State.h" />
+    <ClInclude Include="FrameWork\GameObjects\Enemies\Guard_3rd\Guard3ThrowState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Entity.h" />
+    <ClInclude Include="FrameWork\GameObjects\Jafar\Jafar.h" />
+    <ClInclude Include="FrameWork\GameObjects\Jafar\JafarData.h" />
+    <ClInclude Include="FrameWork\GameObjects\Jafar\JafarOriginalState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Jafar\JafarSnakeState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Jafar\JafarState.h" />
+    <ClInclude Include="FrameWork\GameObjects\MapObject\Camel.h" />
+    <ClInclude Include="FrameWork\GameObjects\MapObject\Pelder.h" />
+    <ClInclude Include="FrameWork\GameObjects\MapObject\SpringBoard.h" />
+    <ClInclude Include="FrameWork\GameObjects\PlayerInfo.h" />
+    <ClInclude Include="FrameWork\GameObjects\Items.h" />
+    <ClInclude Include="FrameWork\GameObjects\MapObject\FloatingGround.h" />
+    <ClInclude Include="FrameWork\GameObjects\MapObject\GameObject.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\Player.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerClimbingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerClimbJumpingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerCuttingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerData.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerDownCuttingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerDownState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerDownThrowingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerDyingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerFallingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerFlippingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerHangCuttingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerHangingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerHangThrowingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerHitState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerJumpCuttingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerJumpingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerJumpThrowingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerLandingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerMoveJumpingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerPushingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerReviveState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerRunCuttingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerRunningState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerStandingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerStoppingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerSwingingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerThrowingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerUpCuttingState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Player\PlayerUpState.h" />
+    <ClInclude Include="FrameWork\GameObjects\Weapon\Apple.h" />
+    <ClInclude Include="FrameWork\GameObjects\Weapon\CivilianEnemy1Weapon.h" />
+    <ClInclude Include="FrameWork\GameObjects\Weapon\Fire.h" />
+    <ClInclude Include="FrameWork\GameObjects\Weapon\Guard3Weapon.h" />
+    <ClInclude Include="FrameWork\GameObjects\Weapon\JafarWeapon1.h" />
+    <ClInclude Include="FrameWork\GameObjects\Weapon\JafarWeapon2.h" />
+    <ClInclude Include="FrameWork\GameObjects\Weapon\Weapon.h" />
+    <ClInclude Include="FrameWork\MapReader\base64.h" />
+    <ClInclude Include="FrameWork\MapReader\tinyxml2.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxEllipse.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxImage.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxImageLayer.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxLayer.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxMap.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxMapTile.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxObject.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxObjectGroup.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxPoint.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxPolygon.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxPolyline.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxPropertySet.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxTerrain.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxTerrainArray.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxTile.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxTileLayer.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxTileOffset.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxTileset.h" />
+    <ClInclude Include="FrameWork\MapReader\TmxUtil.h" />
+    <ClInclude Include="FrameWork\MapReader\zconf.h" />
+    <ClInclude Include="FrameWork\MapReader\zlib.h" />
+    <ClInclude Include="FrameWork\Scenes\BeginScene.h" />
+    <ClInclude Include="FrameWork\Scenes\BossScene.h" />
+    <ClInclude Include="FrameWork\Scenes\DemoScene.h" />
+    <ClInclude Include="FrameWork\Scenes\EndScene.h" />
+    <ClInclude Include="FrameWork\Scenes\Intro.h" />
+    <ClInclude Include="FrameWork\Scenes\Scene1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="FrameWork\MapReader\Tmx.h.in" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,29 @@
+
+Explosion1st1 80 31 38 21
+Explosion1st2 128 39 17 13
+Explosion1st3 152 28 39 24
+Explosion1st4 200 36 30 16
+Explosion2nd1 8 180 26 24
+Explosion2nd2 48 155 60 49
+Explosion2nd3 120 118 81 86
+Explosion2nd4 208 123 83 81
+Explosion2nd5 304 124 82 80
+Explosion2nd6 400 128 83 76
+Explosion2nd7 496 131 83 73
+Explosion3rd1 296 46 6 6
+Explosion3rd2 312 32 19 20
+Explosion3rd3 344 25 26 27
+Explosion3rd4 384 23 30 29
+Explosion3rd5 424 9 43 43
+Explosion4th1 8 67 43 41
+Explosion4th2 64 67 42 41
+Explosion4th3 120 69 43 39
+Explosion4th4 176 71 43 37
+Explosion4th5 232 71 42 37
+Explosion4th6 288 64 43 44
+Explosion4th7 344 75 41 29
+Explosion4th8 392 84 41 24
+Explosion4th9 440 84 39 24
+Explosion4th10 488 88 26 20
+Explosion4th11 528 84 48 24
+
